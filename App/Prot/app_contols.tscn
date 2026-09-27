@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://ddnm1uo48h13o"]
+
+[ext_resource type="Script" uid="uid://b2qbvle1ymggq" path="res://App/Prot/button_manager.gd" id="1_jnsf1"]
+
+[node name="AppContols" type="Panel" unique_id=215156616]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+theme_type_variation = &"backgroundPanel"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=1563918583]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ButtonManager" type="GridContainer" parent="ScrollContainer" unique_id=347744852]
+layout_mode = 2
+columns = 5
+script = ExtResource("1_jnsf1")
+
+[node name="Button" type="Button" parent="ScrollContainer/ButtonManager" unique_id=637527463]
+custom_minimum_size = Vector2(225, 80)
+layout_mode = 2
+text = "Check"
+
+[node name="Button2" type="Button" parent="ScrollContainer/ButtonManager" unique_id=1515133448]
+custom_minimum_size = Vector2(225, 80)
+layout_mode = 2
+text = "Play"
+
+[node name="Button3" type="Button" parent="ScrollContainer/ButtonManager" unique_id=1643057864]
+custom_minimum_size = Vector2(225, 80)
+layout_mode = 2
+text = "Add lengh"
+
+[node name="Button4" type="Button" parent="ScrollContainer/ButtonManager" unique_id=777689428]
+custom_minimum_size = Vector2(225, 80)
+layout_mode = 2
+text = "Delete Lengh"
+
+[node name="Button5" type="Button" parent="ScrollContainer/ButtonManager" unique_id=523492978]
+custom_minimum_size = Vector2(225, 80)
+layout_mode = 2
+text = "Add Line"
+
+[node name="Button6" type="Button" parent="ScrollContainer/ButtonManager" unique_id=1858264416]
+custom_minimum_size = Vector2(225, 80)
+layout_mode = 2
+text = "Delete Line"
+
+[node name="Button7" type="Button" parent="ScrollContainer/ButtonManager" unique_id=135178583]
+custom_minimum_size = Vector2(225, 80)
+layout_mode = 2
+text = "Button"
+
+[node name="Button8" type="Button" parent="ScrollContainer/ButtonManager" unique_id=1347604441]
+custom_minimum_size = Vector2(225, 80)
+layout_mode = 2
+text = "Button"

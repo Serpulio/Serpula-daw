@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://cy1x638hdnto2"]
+
+[ext_resource type="Script" uid="uid://b8on5ntwh8ri3" path="res://App/Prot/main_proll.gd" id="1_ylpv3"]
+[ext_resource type="PackedScene" uid="uid://ddnm1uo48h13o" path="res://App/Prot/app_contols.tscn" id="2_xnr1u"]
+[ext_resource type="Script" uid="uid://c3ecx6rv15vs" path="res://App/Prot/proll_lines.gd" id="3_jjgrq"]
+[ext_resource type="PackedScene" uid="uid://dlkh3qf61stho" path="res://App/Prot/proll_line.tscn" id="4_7r7bm"]
+
+[node name="MainProll" type="VSplitContainer" unique_id=958319401]
+script = ExtResource("1_ylpv3")
+metadata/_tab_index = 0
+
+[node name="AppContols" parent="." unique_id=215156616 instance=ExtResource("2_xnr1u")]
+layout_mode = 2
+
+[node name="Roll" type="Panel" parent="." unique_id=208217534]
+layout_mode = 2
+size_flags_vertical = 3
+theme_type_variation = &"backgroundPanel"
+
+[node name="VScrollBar" type="ScrollContainer" parent="Roll" unique_id=1668495740]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ProllLines" type="VBoxContainer" parent="Roll/VScrollBar" unique_id=1586037772]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("3_jjgrq")
+
+[node name="ProllLine" parent="Roll/VScrollBar/ProllLines" unique_id=1200753796 instance=ExtResource("4_7r7bm")]
+layout_mode = 2

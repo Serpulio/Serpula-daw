@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://bnewhil35ajja"]
+
+[ext_resource type="PackedScene" uid="uid://cy1x638hdnto2" path="res://App/Prot/main_proll.tscn" id="1_dqrlx"]
+
+[node name="Control" type="Control" unique_id=849558497]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TabContainer" type="TabContainer" parent="." unique_id=2089264929]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+current_tab = 0
+drag_to_rearrange_enabled = true
+
+[node name="MainProll" parent="TabContainer" unique_id=958319401 instance=ExtResource("1_dqrlx")]
+layout_mode = 2
+
+[node name="PathsManger" type="Panel" parent="TabContainer" unique_id=2006884156]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="Settings" type="Panel" parent="TabContainer" unique_id=1284832730]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 2
+
+[node name="Export" type="Panel" parent="TabContainer" unique_id=503169829]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 3
+
+[node name="Render" type="Panel" parent="TabContainer" unique_id=693812836]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 4
