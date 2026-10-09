@@ -1,0 +1,101 @@
+[gd_scene format=3 uid="uid://dny4nwb5g1vmi"]
+
+[ext_resource type="Script" uid="uid://db10e3jywiqru" path="res://App/Prot/edo_player.gd" id="1_82g5c"]
+[ext_resource type="Script" uid="uid://8wpy75flq50x" path="res://App/Prot/edo_audio_stream.gd" id="2_y65h7"]
+[ext_resource type="Script" uid="uid://dp07u0l71faxv" path="res://App/Prot/half_values.gd" id="3_mth7b"]
+[ext_resource type="Script" uid="uid://d3x2oxlklimeg" path="res://App/Prot/main.gd" id="3_prrns"]
+
+[node name="EDOPlayer" type="Panel" unique_id=1978740460]
+custom_minimum_size = Vector2(250, 0)
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_type_variation = &"backgroundPanel"
+script = ExtResource("1_82g5c")
+
+[node name="AudioEDOPlayer" type="AudioStreamPlayer" parent="." unique_id=2054592754]
+script = ExtResource("2_y65h7")
+metadata/_custom_type_script = "uid://8wpy75flq50x"
+
+[node name="Main" type="VBoxContainer" parent="." unique_id=480137955]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = -5.0
+offset_bottom = -6.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("3_prrns")
+
+[node name="Top" type="VBoxContainer" parent="Main" unique_id=566737379]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HalfsCout" type="LineEdit" parent="Main/Top" unique_id=29026504]
+layout_mode = 2
+placeholder_text = "Halfs"
+alignment = 1
+
+[node name="ScrollHalfValues" type="ScrollContainer" parent="Main/Top" unique_id=93695902]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HalfValues" type="VBoxContainer" parent="Main/Top/ScrollHalfValues" unique_id=39332001]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("3_mth7b")
+
+[node name="HalfValue" type="LineEdit" parent="Main/Top/ScrollHalfValues/HalfValues" unique_id=825832267]
+layout_mode = 2
+placeholder_text = "Half Value"
+alignment = 1
+
+[node name="Bottom" type="VBoxContainer" parent="Main" unique_id=673965417]
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="Main/Bottom" unique_id=448274462]
+layout_mode = 2
+columns = 2
+
+[node name="AddHalf" type="Button" parent="Main/Bottom/GridContainer" unique_id=443767987]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "+"
+
+[node name="RemoveHalf" type="Button" parent="Main/Bottom/GridContainer" unique_id=2076995072]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "-"
+
+[node name="LineTime" type="LineEdit" parent="Main/Bottom/GridContainer" unique_id=415643650]
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "Time"
+alignment = 1
+
+[node name="LineOctave" type="LineEdit" parent="Main/Bottom/GridContainer" unique_id=641304787]
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "Octav"
+alignment = 1
+
+[node name="Reset" type="Button" parent="Main/Bottom" unique_id=79865940]
+layout_mode = 2
+text = "Reset"
+
+[node name="PlayToggle" type="Button" parent="Main/Bottom" unique_id=469236631]
+layout_mode = 2
+size_flags_vertical = 3
+toggle_mode = true
+text = "|>"

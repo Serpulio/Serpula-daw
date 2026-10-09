@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://ioljnvkcxejn"]
+
+[ext_resource type="PackedScene" uid="uid://dny4nwb5g1vmi" path="res://App/Prot/edo_player.tscn" id="1_i1hgb"]
+[ext_resource type="Script" uid="uid://djt7uo14yn7mf" path="res://Core/Scales/Resource/new_script.gd" id="2_yrt34"]
+
+[sub_resource type="Resource" id="Resource_i1hgb"]
+script = ExtResource("2_yrt34")
+scale_halfs = Array[int]([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12])
+halfs = 12
+metadata/_custom_type_script = "uid://djt7uo14yn7mf"
+
+[node name="EDO" type="Panel" unique_id=1247850937]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_tab_index = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=1820908084]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer" unique_id=1805929123]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="EDOPlayer" parent="ScrollContainer/HBoxContainer" unique_id=1978740460 instance=ExtResource("1_i1hgb")]
+layout_mode = 2
+note_scale = SubResource("Resource_i1hgb")
+
+[node name="EDOPlayer2" parent="ScrollContainer/HBoxContainer" unique_id=939005849 instance=ExtResource("1_i1hgb")]
+layout_mode = 2
+note_scale = SubResource("Resource_i1hgb")
+
+[node name="EDOPlayer3" parent="ScrollContainer/HBoxContainer" unique_id=997012814 instance=ExtResource("1_i1hgb")]
+layout_mode = 2
+note_scale = SubResource("Resource_i1hgb")

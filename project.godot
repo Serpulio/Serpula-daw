@@ -10,8 +10,9 @@ config_version=5
 
 [application]
 
-config/name="TEST Piano Roll"
-config/version="v0.1.0-dev1"
+config/name="Serpula DAW"
+config/description="Open Source DAW"
+config/version="v0.1.2"
 run/main_scene="uid://bnewhil35ajja"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
@@ -20,6 +21,7 @@ config/icon="res://icon.svg"
 
 G="*uid://ca1qpgajyybia"
 UFX="*uid://dvi8705ibacrf"
+EDOManager="*uid://b0x4b8ytxveqp"
 
 [display]
 
@@ -39,3 +41,4 @@ theme/custom="uid://bwlflpoty213m"
 rendering_device/driver.windows="d3d12"
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+textures/vram_compression/import_etc2_astc=true

@@ -32,6 +32,9 @@ func _ready() -> void:
 			menu_drums_button.add_item(i.resource_name)
 
 func _play_proll() -> void:
+	
+	_proll_check()
+	
 	for i in proll_data:
 		if i:
 			if !proll_player:
@@ -45,14 +48,24 @@ func _proll_check() -> void:
 	
 	var tmp_proll_data: Array[bool]
 	
-	drum_samples = _get_wav_files()
+	if OS.get_name() == "Linux":
+		print("Запущено на Linux")
+		drum_samples = _get_wav_files()
+	elif OS.get_name() == "Android":
+		print("Запущено на Android")
+		drum_samples = [preload("uid://dy7vqyqb7vy7e"), preload("uid://ctyahealfmv12"), preload("uid://cjuiv3nlf0qpn"), preload("uid://cfaxpedjcw3ur"), preload("uid://dsl85bb3x1t26"), preload("uid://bxqneyv4uqcc3")]
+		
+		for i in drum_samples:
+			var file_name := i.resource_path.get_file().get_basename()
+			i.resource_name = file_name
 	
 	for i in get_children():
 		if i is Button:
 			print(i.name + " IS: " + "Pressed" if i.button_pressed else "Dont presed")
 			tmp_proll_data.append(i.button_pressed)
 	
-	proll_player.stream = drum_samples[menu_drums_button.selected]
+	if drum_samples.size() > 0:
+		proll_player.stream = drum_samples[menu_drums_button.selected]
 	
 	proll_data = tmp_proll_data
 
